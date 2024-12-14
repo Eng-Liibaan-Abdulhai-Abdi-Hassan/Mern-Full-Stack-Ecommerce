@@ -1,0 +1,31 @@
+const express = require('express')
+const router = express.Router();
+const AllControllers = require('../controller/AllControllers');
+const  AddCartProtocol  = require('../middleware/AddCartProtocol');
+router
+    .post('/auth/signup', AllControllers.signup)
+    .post('/auth/login', AllControllers.login)
+    .post('/payment/signuppayment', AllControllers.paymentmethod)
+    .post('/payment/getpaymentmethod', AllControllers.getpaymentmethod)
+    .post('/auth/logout', AllControllers.logout)
+    .post('/product/productsignup', AllControllers.productsignup)
+    .post('/category/categorysignup', AllControllers.categorysignup)
+    .post('/addcart/addcartsignup',AddCartProtocol, AllControllers.addcart)
+    .get('/product/getallproduct', AllControllers.getallproduct)
+    .get('/payment/GetAllpaymentmethod', AllControllers.GetAllpaymentmethod)
+    .get('/payment/Getpaymentmethod/:id', AllControllers.Getpaymentmethod)
+    .get('/product/getsingleproduct/:id', AllControllers.getsingleproduct)
+    .get('/product/searchproduct', AllControllers.searchproduct)
+    .get('/product/productcount/:id', AllControllers.productcount)
+    .get('/category/getallcategory', AllControllers.getallcategory)
+    .get('/addcart/getalladdcart', AddCartProtocol,AllControllers.alladdcart)
+    .delete('/addcart/deleteaddcart/:id', AllControllers.deleteaddcart)
+    .put('/addcart/updateaddcart', AllControllers.updateaddcart)
+    .put('/auth/updateuser', AllControllers.updateuser)
+    .delete('/product/deleteproduct/:id', AllControllers.deleteproduct)
+    .put('/category/updatecategory', AllControllers.updatecategory)
+    .delete('/category/deletecategory/:id', AllControllers.deletecategory)
+    .put('/product/updateproduct', AllControllers.updateproduct)
+    .get('/product/getproductcategory', AllControllers.getproductcategory)
+    .post('/product/filterproductcategory', AllControllers.filterproductcategory)
+module.exports = router;
