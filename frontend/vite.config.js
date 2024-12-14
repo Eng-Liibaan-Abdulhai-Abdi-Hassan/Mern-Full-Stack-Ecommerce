@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 4000,
+    port: 'https://mern-full-stack-ecommerce.onrender.com',
     // proxy: {
     //   '/api': {
     //     target: apiUrl,
