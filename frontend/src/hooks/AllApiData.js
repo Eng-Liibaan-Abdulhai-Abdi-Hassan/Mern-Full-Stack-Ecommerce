@@ -1,4 +1,4 @@
-export const endpoint = 'http://localhost:3000/api'
+export const endpoint = 'https://backend-2otc.onrender.com/api'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
